@@ -50,7 +50,8 @@ I would like each restaurant to be a pinpoint on the map
 
 *V2*
 
-```As a user,
+```
+As a user,
 So that I can decide where to eat,
 I would like to discover more information about each restaurant such as its name, description, star-rating/reviews and address
 ```
