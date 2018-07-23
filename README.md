@@ -86,7 +86,8 @@ So that I can work out the quickest way of visiting a restaurant,
 I would like to be given directions by foot, public transport and car
 ```
 
-```As a user,
+```
+As a user,
 So that I can narrow down my search for a restaurant,
 I would like to be able to search for restaurants in a particular neighbourhood and at particular price range
 ```
