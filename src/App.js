@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Search from './Search';
 import MapContainer from './MapContainer';
+import YelpContainer from './YelpContainer';
 
 class App extends Component {
 
@@ -9,6 +10,7 @@ class App extends Component {
       <div className="App">
       <Search />
       <MapContainer />
+      <YelpContainer />
       </div>
     );
   }
