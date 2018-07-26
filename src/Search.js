@@ -16,7 +16,7 @@ class Search extends Component {
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value})
+    this.props.callback(event.target.value);
     console.log(this.state.value)
 
   }
@@ -25,7 +25,7 @@ class Search extends Component {
     return (
       <div>
         <form action="post">
-          <input value={this.props.value} onChange={this.handleChange} placeholder="Select a cuisine..."></input>
+          <input type="text" onChange={this.handleChange} placeholder="Select a cuisine..."/>
           <button onClick={this.handleClick} value={this.props.value}type="submit">Submit</button>
         </form>
       </div>

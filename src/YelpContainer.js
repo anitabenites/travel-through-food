@@ -42,6 +42,7 @@ class YelpContainer extends Component {
     return (
       <div>
       {this.state.restaurants}
+      <p>The result of the input field: {this.props.data}</p>
       </div>
     );
   };
