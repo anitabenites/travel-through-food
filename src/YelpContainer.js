@@ -1,27 +1,29 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-const config = {
-  headers: {'Authorization': "Bearer " + process.env.REACT_APP_YELP_API_KEY},
-  params: {
-    term: "tacos",
-    location: 'berlin'
-  }
-};
-
 class YelpContainer extends Component {
-
   constructor(props) {
   super(props);
   this.state = {
-    restaurants: []
+    restaurants: [],
+    term: ''
   }
 }
 
-  componentDidMount() {
-    axios.get('https://shielded-hamlet-43668.herokuapp.com/'+'https://api.yelp.com/v3/businesses/search', config)
+componentWillReceiveProps(nextProps) {
+  console.log("Updated")
+  const term = nextProps && nextProps.data
+    const config = {
+      headers: {'Authorization': "Bearer " + process.env.REACT_APP_YELP_API_KEY},
+      params: {
+        term,
+        location: 'berlin'
+      }
+    };
+
+    axios.get('https://shielded-hamlet-43668.herokuapp.com/https://api.yelp.com/v3/businesses/search', config)
     .then(response => {
-      let restaurants = response.data.businesses.map((rest, index) => {
+      const restaurants = response.data.businesses.map((rest, index) => {
         return(
           <div key={index}>
           <ul>
@@ -34,15 +36,14 @@ class YelpContainer extends Component {
           </div>
         );
       });
-      this.setState({restaurants:restaurants});
+      this.setState({ restaurants, term });
     });
   };
 
   render() {
     return (
       <div>
-      {this.state.restaurants}
-      <p>The result of the input field: {this.props.data}</p>
+        {this.state.restaurants}
       </div>
     );
   };
