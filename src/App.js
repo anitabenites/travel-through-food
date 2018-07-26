@@ -4,7 +4,10 @@ import MapContainer from './MapContainer';
 import YelpContainer from './YelpContainer';
 
 class App extends Component {
+  constructor() {
+    super();
 
+  }
   render() {
     return (
       <div className="App">

@@ -4,7 +4,7 @@ import axios from 'axios';
 const config = {
   headers: {'Authorization': "Bearer " + process.env.REACT_APP_YELP_API_KEY},
   params: {
-    term: 'tacos',
+    term: "tacos",
     location: 'berlin'
   }
 };
@@ -19,7 +19,6 @@ class YelpContainer extends Component {
 }
 
   componentDidMount() {
-
     axios.get('https://shielded-hamlet-43668.herokuapp.com/'+'https://api.yelp.com/v3/businesses/search', config)
     .then(response => {
       let restaurants = response.data.businesses.map((rest, index) => {
