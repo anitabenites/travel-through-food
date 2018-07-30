@@ -11,7 +11,6 @@ class YelpContainer extends Component {
 }
 
 componentWillReceiveProps(nextProps) {
-  console.log("Updated")
   const term = nextProps && nextProps.data
     const config = {
       headers: {'Authorization': "Bearer " + process.env.REACT_APP_YELP_API_KEY},

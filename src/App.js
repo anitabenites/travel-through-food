@@ -7,25 +7,10 @@ class App extends Component {
   constructor() {
     super();
     this.state= {data: ''}
-    this.handleClickParent = this.handleClickParent.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.formChildSearch = this.formChildSearch.bind(this);
-
+    this.userSearch = this.userSearch.bind(this);
   }
 
-  handleChange(event) {
-    console.log('parent event',event.target.value)
-    event.preventDefault();
-    this.setState({ data: event.target.value })
-  }
-
-  handleClickParent(event) {
-    event.preventDefault();
-    let searchWord = this.term.value;
-    console.log("searchWord", searchWord)
-  }
-
-  formChildSearch(params){
+  userSearch(params){
     this.setState({
       data: params
     })
@@ -34,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Search onChange={this.handleChange} searchString={this.state.data} callback={this.formChildSearch} />
+        <Search callback={this.userSearch} />
         <MapContainer />
         <YelpContainer data={this.state.data} />
       </div>

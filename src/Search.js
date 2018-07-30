@@ -7,14 +7,16 @@ class Search extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
+  handleChange(event) {
+    //event.preventDefault();
+    this.setState({value: event.target.value})
+  }
 
   handleClick(event) {
     event.preventDefault();
+    this.props.callback(this.state.value)
   }
 
-  handleChange(event) {
-    this.props.callback(event.target.value);
-  }
 
   render() {
     return (
