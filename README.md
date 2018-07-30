@@ -50,7 +50,8 @@ I would like each restaurant to be a pinpoint on the map
 
 *V2*
 
-```As a user,
+```
+As a user,
 So that I can decide where to eat,
 I would like to discover more information about each restaurant such as its name, description, star-rating/reviews and address
 ```
@@ -86,7 +87,8 @@ So that I can work out the quickest way of visiting a restaurant,
 I would like to be given directions by foot, public transport and car
 ```
 
-```As a user,
+```
+As a user,
 So that I can narrow down my search for a restaurant,
 I would like to be able to search for restaurants in a particular neighbourhood and at particular price range
 ```
