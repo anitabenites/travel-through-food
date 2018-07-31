@@ -6,7 +6,10 @@ import YelpContainer from './YelpContainer';
 class App extends Component {
   constructor() {
     super();
-    this.state= {data: ''}
+    this.state= {
+      data: '',
+      // coordinates: ''
+    }
     this.userSearch = this.userSearch.bind(this);
   }
 
@@ -16,12 +19,17 @@ class App extends Component {
     })
   }
 
+  // YelpContainer(params){
+  //   this.setState({
+  //     coordinates: params
+  //   })
+  // }
+
   render() {
-    
+
     return (
       <div className="App">
         <Search callback={this.userSearch} />
-        <MapContainer />
         <YelpContainer data={this.state.data} />
       </div>
     );
