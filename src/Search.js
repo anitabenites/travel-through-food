@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ""};
+    this.state = {
+      value: ""
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
   handleChange(event) {
-    //event.preventDefault();
     this.setState({value: event.target.value})
   }
 
