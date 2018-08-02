@@ -23,8 +23,8 @@ class Search extends Component {
     return (
       <div>
         <form action="post">
-          <input type="text" onChange={this.handleChange} placeholder="Select a cuisine..."/>
-          <button onClick={this.handleClick} value={this.props.value} type="submit">Submit</button>
+          <input style={{ width: 120, height: 30 }} type="text" onChange={this.handleChange} placeholder="Select a cuisine..."/>
+          <button style={{ width: 60, height: 34 }} onClick={this.handleClick} value={this.props.value} type="submit">Submit</button>
         </form>
       </div>
     );
