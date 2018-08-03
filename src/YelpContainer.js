@@ -7,7 +7,8 @@ class YelpContainer extends Component {
   super(props);
   this.state = {
     restaurants: [],
-    term: ''
+    term: '',
+    restaurantName: ''
   }
 }
 
@@ -30,7 +31,11 @@ componentWillReceiveProps(nextProps) {
         });
         return restCoordinates
       });
-
+      const restaurantName = response.data.businesses.map((restaurant) => {
+        var restName = []
+        restName.push(restaurant.name)
+        this.setState({restaurantNames: restName})
+      })
       this.setState({ restaurants, term });
     });
   };
@@ -38,7 +43,7 @@ componentWillReceiveProps(nextProps) {
   render() {
     return (
       <div>
-      <MapContainer restCoordinates={this.state.restaurants} />
+      <MapContainer restCoordinates={this.state.restaurants} restaurantNames={this.state.restaurantNames}/>
       </div>
     );
   };

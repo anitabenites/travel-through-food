@@ -19,7 +19,8 @@ class MapContainer extends Component {
       zoom: 12
     });
 
-    const coordinatesList = nextProps.restCoordinates
+    const coordinatesList = nextProps.restCoordinates,
+          restaurantsList = nextProps.restaurantNames
     let latLong = coordinatesList.map((coor) => {
       let latitude = coor[0],
           longitude = coor[1],
@@ -27,15 +28,22 @@ class MapContainer extends Component {
           marker = new window.google.maps.Marker({
         position: myLatLng,
         map: map,
-        title: 'Hello World!'
       });
-    })
+
+        var infowindow = new window.google.maps.InfoWindow({
+          content: "Hola"
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      })
   }
 
   render() {
     return (
       <div>
         <div style={{ width: 1130, height: 550 }} id="map" />
+        {this.props.restaurantNames}
       </div>
     );
   }
